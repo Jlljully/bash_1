@@ -104,6 +104,9 @@ done
 
 **Поменяла один айпи чтобы был хоть один адрес был недоступен:**
 
+![image](https://github.com/Jlljully/bash/blob/main/Screenshot_6.png)
+
+![image](https://github.com/Jlljully/bash/blob/main/Screenshot_7.png)
 
 ---
 
