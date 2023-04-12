@@ -64,7 +64,33 @@ done
 ### Ваш скрипт:
 
 ```bash
-???
+
+hostlist=("http://192.168.0.1:80" "http://173.194.222.113:80" "http://87.250.250.242:80")
+for i in ${hostlist[@]}
+do
+
+counter=0
+
+while 
+        ((1==1))
+do
+        echo $counter
+        if ((counter>4))
+        then
+                break
+        else
+        curl $i
+        if (($? == 0))
+        then
+                echo "$i is available" >> curl.log
+        else
+                echo "$i is FAILED" >> error
+        fi
+        counter=$(($counter+1))
+        fi
+done
+done
+           
 ```
 
 ---
