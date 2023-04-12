@@ -106,23 +106,26 @@ done
 
 ### Ваш скрипт:
 
-```bash
+```#!/usr/bin/env bash
 
 hostlist=("http://192.168.0.1:80" "http://173.194.222.113:80" "http://87.250.250.242:80")
-for i in ${hostlist[@]}
+while 
+        ((1==1))
 do
 
-while ((1==1))
+        for i in ${hostlist[@]}
 do
+
         curl $i
         if (($? == 0))
         then
                 echo "$i is available" >> curl.log
         else
                 echo "$i is FAILED" >> error
-		break
+                break
         fi
-       
+
+
 done
 done
            
