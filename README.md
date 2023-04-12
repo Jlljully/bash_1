@@ -106,7 +106,7 @@ done
 
 ### Ваш скрипт:
 
-```#!/usr/bin/env bash
+```bash
 
 hostlist=("http://192.168.0.1:80" "http://173.194.222.113:80" "http://87.250.250.242:80")
 while 
@@ -130,4 +130,9 @@ done
 done
            
 ```
+
+![image](https://github.com/Jlljully/bash/blob/main/Screenshot_8.png)
+
+**Поменяю один IP на недоступный:**
+
 
