@@ -94,10 +94,9 @@ done
 ```
 **Поменяла один айпи чтобы был хоть один адрес был недоступен:**
 
-![image](https://github.com/Jlljully/bash/blob/main/Screenshot_7.png)
+![image](https://github.com/Jlljully/scripted/blob/main/files/lesson1/Screenshot_7.png)
 
-![image](https://github.com/Jlljully/bash/blob/main/Screenshot_6.png)
-
+![image](https://github.com/Jlljully/scripted/blob/main/files/lesson1/Screenshot_6.png)
 
 ---
 ## Задание 4
@@ -131,7 +130,7 @@ done
            
 ```
 
-![image](https://github.com/Jlljully/bash/blob/main/Screenshot_8.png)
+![image](https://github.com/Jlljully/scripted/blob/main/files/lesson1/Screenshot_8.png)
 
 **Поменяю один IP на недоступный:**
 
