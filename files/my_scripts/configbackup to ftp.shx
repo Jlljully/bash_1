@@ -1,0 +1,29 @@
+#!/bin/sh
+
+SANLIST="mdrfcaxx"
+
+USER="xxx"
+PASS="xxx"
+TODAY=$(date +'%u')
+
+ftp -i -n 10.1.x.x << EOM
+
+user "$USER" "$PASS"
+
+rm -rf /.mounts/Accenture_IO_FTP/upload/
+mkdir -p /.mounts/Accenture_IO_FTP/upload/"$TODAY"
+quit
+EOM
+
+sleep 2; echo ok
+
+for i in $SANLIST
+do
+ssh admin@$i "configupload -switch -ftp 10.1.x.x,'$USER',/.mounts/Accenture_IO_FTP/"$TODAY"/$i.txt,$PASS"
+done
+
+mail -s 'SAN config was uploaded' test@test.com << EOF
+
+SAN config was uploaded
+
+EOF

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+SANLIST="mdrfcaX"
+
+USER="sanadmin"
+
+PASS="xxx"
+
+TODAY=$(date +'%u')
+
+
+rm -rf /home/sanadmin/MorningTask/upload/
+mkdir -p /home/sanadmin/MorningTask/upload/"$TODAY"
+
+sleep 2; echo ok
+
+for i in $SANLIST
+do
+ssh admin@$i "configupload -switch -p sftp 10.1.x.x,sanadmin,/home/sanadmin/MorningTask/upload/"$TODAY"/$i.txt,compaq" 
+done
+
+mail -s 'SAN config was uploaded' -r sanconfig@monitor.ru test@test.ru << EOF
+
+SAN config was uploaded
+
+EOF

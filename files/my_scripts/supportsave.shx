@@ -1,0 +1,49 @@
+#!/bin/sh
+
+ROOTDIR="/home/sanadmin/MorningTask"
+
+SANLIST="mdrfcaxx"
+
+for i in $SANLIST
+do
+
+mkdir $ROOTDIR 2>&1 > /dev/null
+rm -rf $ROOTDIR/$i 2>&1 >/dev/null
+mkdir $ROOTDIR/$i 2>&1 > /dev/null
+
+    date > $ROOTDIR/$i/log
+    echo "Start check $i" >> $ROOTDIR/$i/log 
+
+    echo "CLI: switchstatusshow" >> $ROOTDIR/$i/log 
+    ssh admin@$i switchstatusshow >> $ROOTDIR/$i/log
+    echo >> $ROOTDIR/$i/log 
+
+    echo "CLI: switchshow" >> $ROOTDIR/$i/log 
+    ssh admin@$i switchshow >> $ROOTDIR/$i/log
+    echo >> $ROOTDIR/$i/log 
+
+    echo "CLI: porterrshow" >> $ROOTDIR/$i/log 
+    ssh admin@$i porterrshow >> $ROOTDIR/$i/log
+    echo >> $ROOTDIR/$i/log 
+
+    echo "CLI: errdump" >> $ROOTDIR/$i/log 
+    ssh admin@$i errdump -r >> $ROOTDIR/$i/log.tmp
+    cat $ROOTDIR/$i/log.tmp | /bin/grep -v INFO | grep -v "^$" >> $ROOTDIR/$i/log
+#    rm -f $ROOTDIR/$i/log.tmp
+    echo >> $ROOTDIR/$i/log 
+
+    echo "CLI: supportsave" >> $ROOTDIR/$i/log 
+    ssh admin@$i supportsave -n -u xxx -p xxx -h 10.1.x.x -d /home/sanadmin/MorningTask/$i/ -l scp >> $ROOTDIR/$i/log
+    echo "Suportsave saved to monitor: $ROOTDIR/$i" >> $ROOTDIR/$i/log 
+    echo >> $ROOTDIR/$i/log 
+
+    echo "CLI: slotstatsclear" >> $ROOTDIR/$i/log 
+    ssh admin@$i slotstatsclear >> $ROOTDIR/$i/log
+    echo >> $ROOTDIR/$i/log 
+
+    date >> $ROOTDIR/$i/log 
+
+    cat $ROOTDIR/$i/log | mail -s "SAN Check log for $i" test@test.ru
+
+done
+
