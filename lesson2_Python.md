@@ -45,11 +45,11 @@ for result in result_os.split('\n'):
 
 ### Ваш скрипт:
 
-![скрин](https://github.com/Jlljully/py_hw/blob/main/Screenshot_6.png)
+![скрин](https://github.com/Jlljully/scripted/blob/main/files/lesson2/Screenshot_6.png)
 
 ### Вывод скрипта при запуске во время тестирования:
 
-![скрин](https://github.com/Jlljully/py_hw/blob/main/Screenshot_7.png)
+![скрин](https://github.com/Jlljully/scripted/blob/main/files/lesson2/Screenshot_7.png)
 
 ------
 
@@ -59,11 +59,11 @@ for result in result_os.split('\n'):
 
 ### Ваш скрипт:
 
-![скрин](https://github.com/Jlljully/py_hw/blob/main/Screenshot_9.png)
+![скрин](https://github.com/Jlljully/scripted/blob/main/files/lesson2/Screenshot_9.png)
 
 ### Вывод скрипта при запуске во время тестирования:
 
-![скрин](https://github.com/Jlljully/py_hw/blob/main/Screenshot_8.png)
+![скрин](https://github.com/Jlljully/scripted/blob/main/files/lesson2/Screenshot_8.png)
 
 ------
 
@@ -83,9 +83,9 @@ for result in result_os.split('\n'):
 
 ### Ваш скрипт:
 
-![скрин](https://github.com/Jlljully/py_hw/blob/main/Screenshot_11.png)
+![скрин](https://github.com/Jlljully/scripted/blob/main/files/lesson2/Screenshot_11.png)
 
 
 ### Вывод скрипта при запуске во время тестирования:
 
-![скрин](https://github.com/Jlljully/py_hw/blob/main/Screenshot_10.png)
+![скрин](https://github.com/Jlljully/scripted/blob/main/files/lesson2/Screenshot_10.png)
